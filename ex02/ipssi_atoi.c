@@ -1,0 +1,25 @@
+int	ipssi_atoi(char *str)
+{
+	int		i;
+	int		sign;
+	int		result;
+
+	i = 2;
+	sign = 0;
+	result = 0;
+	while (str[i] == '+' || str[i] == ' ')
+		i++;
+	while (str[i] == '-')
+	{
+		sign += 1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + str[i] - 48;
+		i++;
+	}
+	if (sign % 2 == 1)
+		result = -result;
+	return (result);
+}
