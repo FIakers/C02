@@ -1,3 +1,13 @@
+int	ipssi_isspace(char str)
+{
+	if (str == ' ' || str == '\n' || str == '\f')
+		return (1);
+	else if (str == '\v' || str == '\r' || str == '\t')
+		return (1);
+	else
+		return (0);
+}
+
 int	ipssi_atoi(char *str)
 {
 	int		i;
@@ -7,7 +17,7 @@ int	ipssi_atoi(char *str)
 	i = 0;
 	sign = 0;
 	result = 0;
-	while (str[i] == ' ')
+	while (ipssi_isspace(str[i]) == 1)
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
