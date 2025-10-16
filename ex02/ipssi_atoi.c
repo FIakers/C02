@@ -4,7 +4,7 @@ int	ipssi_atoi(char *str)
 	int		sign;
 	int		result;
 
-	i = 2;
+	i = 0;
 	sign = 0;
 	result = 0;
 	while (str[i] == ' ')
